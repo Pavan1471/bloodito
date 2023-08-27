@@ -39,3 +39,62 @@ code {
   width: 110px;
   
 }
+#card-2{
+  background: rgb(86,210,114);
+background: linear-gradient(326deg, rgba(86,210,114,1) 23%, rgba(223,249,228,1) 87%);
+}
+
+
+
+
+
+
+
+
+/* Dashboard CSS */
+.blood-logo{
+  width: 50px;
+}
+.blooddonar-stats{
+  display: flex;
+  justify-content: space-around;
+  background-color: lightblue;
+  background: rgb(133,168,255);
+  background: linear-gradient(326deg, rgba(133,168,255,1) 23%, rgba(232,241,255,1) 87%);
+  background: rgb(255,192,192);
+  background: linear-gradient(326deg, rgba(255,192,192,1) 23%, rgba(255,240,240,1) 87%);
+  width: 160px;
+  padding: 20px;
+  border-radius: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.donars-number{
+  font-size: 30px;
+  font-weight: bold;
+}
+.donars-name{
+  font-weight: bold;
+  opacity: 0.7;
+}
+.donars-container-stats{
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+
+}
+#card-1{
+  background: rgb(133,168,255);
+background: linear-gradient(326deg, rgba(133,168,255,1) 23%, rgba(232,241,255,1) 87%);
+  
+}
+
+
+
+/* Responsive design */
+@media only screen and (min-width: 1000px) {
+  .blooddonar-stats{
+    width: 230px;
+  }
+  
+}
