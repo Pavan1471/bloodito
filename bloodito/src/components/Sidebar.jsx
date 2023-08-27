@@ -76,7 +76,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
   return (
     <Box
       transition="3s ease"
-      bg={useColorModeValue("white", "gray.900")}
+      bg={useColorModeValue("red.100", "gray.900")}
       borderRight="1px"
       borderRightColor={useColorModeValue("gray.200", "gray.700")}
       w={{ base: "full", md: 60 }}
@@ -85,8 +85,8 @@ const SidebarContent = ({ onClose, ...rest }) => {
       {...rest}
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
+        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold" color="red.600">
+          Bloodito
         </Text>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
@@ -115,7 +115,7 @@ const NavItem = ({ to, icon, children, ...rest }) => {
         role="group"
         cursor="pointer"
         _hover={{
-          bg: "cyan.400",
+          bg: "#ff657d",
           color: "white",
         }}
         {...rest}
@@ -144,7 +144,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
       px={{ base: 4, md: 4 }}
       height="20"
       alignItems="center"
-      bg={useColorModeValue("white", "gray.900")}
+      bg={useColorModeValue("red.100", "gray.900")}
       borderBottomWidth="1px"
       borderBottomColor={useColorModeValue("gray.200", "gray.700")}
       justifyContent={{ base: "space-between", md: "flex-end" }}
@@ -163,21 +163,22 @@ const MobileNav = ({ onOpen, ...rest }) => {
         fontSize="2xl"
         fontFamily="monospace"
         fontWeight="bold"
+        color="red.600"
       >
-        Logo
+        Bloodito
       </Text>
 
       <HStack spacing={{ base: "0", md: "6" }}>
-        <IconButton
+        {/* <IconButton
           size="lg"
           variant="ghost"
           aria-label="open menu"
           icon={<FiBell />}
-        />
+        /> */}
 
-        <Button onClick={toggleColorMode}>
+        {/* <Button onClick={toggleColorMode}>
           {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-        </Button>
+        </Button> */}
 
         <Flex alignItems={"center"}>
           <Menu>

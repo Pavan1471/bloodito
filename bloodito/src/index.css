@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* Donars CSS */
+.donar-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color:#ffc9d0;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.blood-group{
+  font-size: 40px;
+  display: flex;
+}
+.blood-img{
+  width: 60px;
+  margin-right: 10%;
+}
+.blood-info{
+  display: flex;
+  align-items: center;
+}
+.donar-name{
+  margin-left: 10px;
+  width: 110px;
+  
+}
