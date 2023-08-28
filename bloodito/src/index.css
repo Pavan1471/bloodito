@@ -44,14 +44,15 @@ code {
   background: rgb(86,210,114);
 background: linear-gradient(326deg, rgba(86,210,114,1) 23%, rgba(223,249,228,1) 87%);
 }
-
-
-
-
-
-
-
-
+.post-icon{
+  width: 50px;
+  position:fixed;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+}
 /* Dashboard CSS */
 .blood-logo{
   width: 40px;
@@ -95,18 +96,23 @@ background: linear-gradient(326deg, rgba(133,168,255,1) 23%, rgba(232,241,255,1)
   background: rgb(255,255,0);
 background: linear-gradient(326deg, rgba(255,255,0,1) 23%, rgba(251,255,231,1) 87%);
 }
-.bar-graph{
+.bargraph{
+  margin-top: 40px;
+  height: 430px;
+}
+.pie-chart{
+  width: 300px;
+  margin: auto;
   margin-top: 40px;
 }
-
 
 /* Responsive design */
 @media only screen and (min-width: 800px) {
   .blooddonar-stats{
     width: 230px;
   }
-  .bar-graph{
-    height: 130;
+  .bargraph{
+    height: 730px;
   }
   .donar-containers{
     flex-wrap: wrap;
@@ -121,7 +127,12 @@ background: linear-gradient(326deg, rgba(255,255,0,1) 23%, rgba(251,255,231,1) 8
     height: 92px;
     margin-bottom: 10px;
   }
-
+  .pie-chart{
+    width: 500px;
+    margin: auto;
+    margin-top: 40px;
+  }
+  
   
   
 }

@@ -3,17 +3,23 @@ import bloodlogo from "./asserts/blood-drop.png";
 import blooddonate from "./asserts/blood-donation.png";
 import bloodbag from "./asserts/blood-bag.png";
 import bloodrequest from "./asserts/blood-request.png";
+import {plus} from './asserts/plus.png'
 import { FcApproval } from "react-icons/fc";
+// import Piechart from "../components/Piechart";
 import {
   Chart,
   BarElement,
   LinearScale,
   CategoryScale,
   Legend,
+  ArcElement,
 } from "chart.js";
-import { Bar } from "react-chartjs-2";
+import { Bar, Pie } from "react-chartjs-2";
+// import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+// import { Pie } from 'react-chartjs-2';
+
 // import React from "react";
-Chart.register(BarElement, LinearScale, CategoryScale, Legend);
+Chart.register(BarElement, LinearScale, CategoryScale, Legend, ArcElement);
 const Dashboard = () => {
   const labels = [
     "Jan",
@@ -33,6 +39,13 @@ const Dashboard = () => {
     plugins: {
       legend: {
         position: "top",
+      },
+    },
+  };
+  const Option = {
+    plugins: {
+      legend: {
+        position: "bottom",
       },
     },
   };
@@ -85,7 +98,14 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-        <Bar className="bar-graph" height={130}  data={data} />
+      
+        <Bar className="bargraph" height={135} data={data} />
+      
+      {/* <Pie data={data} width={50}/> */}
+      {/* <div style={{ width: '500px', height: '500px',margin:'auto',marginTop:'40px' }}> */}
+      <div className="pie-chart">
+        <Pie data={data} options={Option} />
+      </div>
     </>
   );
 };

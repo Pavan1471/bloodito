@@ -4,11 +4,13 @@ import blood from "./asserts/blood.png";
 import { Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 // import React from "react";
 // import "./App.css";
+import plus from "./asserts/plus.png";
 import { FiMap, FiPhoneCall, FiUser } from "react-icons/fi";
 
 function Donate() {
   return (
     <>
+      <img src={plus} className="post-icon"></img>
       <div className="donar-containers">
         <div className="donar-container">
           <div className="blood-group">
@@ -413,6 +415,8 @@ function Donate() {
           </div>
         </Skeleton>
       </div>
+
+      
     </>
   );
 }
