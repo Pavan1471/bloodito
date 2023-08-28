@@ -22,6 +22,7 @@ code {
   font-weight: bold;
   margin-bottom: 10px;
 }
+
 .blood-group{
   font-size: 40px;
   display: flex;
@@ -53,7 +54,7 @@ background: linear-gradient(326deg, rgba(86,210,114,1) 23%, rgba(223,249,228,1) 
 
 /* Dashboard CSS */
 .blood-logo{
-  width: 50px;
+  width: 40px;
 }
 .blooddonar-stats{
   display: flex;
@@ -63,19 +64,21 @@ background: linear-gradient(326deg, rgba(86,210,114,1) 23%, rgba(223,249,228,1) 
   background: linear-gradient(326deg, rgba(133,168,255,1) 23%, rgba(232,241,255,1) 87%);
   background: rgb(255,192,192);
   background: linear-gradient(326deg, rgba(255,192,192,1) 23%, rgba(255,240,240,1) 87%);
-  width: 160px;
+  width: 170px;
+  height: 100px;
   padding: 20px;
   border-radius: 20px;
   align-items: center;
   margin-bottom: 20px;
 }
 .donars-number{
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
 }
 .donars-name{
   font-weight: bold;
   opacity: 0.7;
+  font-size: 13px;
 }
 .donars-container-stats{
   flex-wrap: wrap;
@@ -88,13 +91,37 @@ background: linear-gradient(326deg, rgba(86,210,114,1) 23%, rgba(223,249,228,1) 
 background: linear-gradient(326deg, rgba(133,168,255,1) 23%, rgba(232,241,255,1) 87%);
   
 }
-
+#card-3{
+  background: rgb(255,255,0);
+background: linear-gradient(326deg, rgba(255,255,0,1) 23%, rgba(251,255,231,1) 87%);
+}
+.bar-graph{
+  margin-top: 40px;
+}
 
 
 /* Responsive design */
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 800px) {
   .blooddonar-stats{
     width: 230px;
   }
+  .bar-graph{
+    height: 130;
+  }
+  .donar-containers{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+  }
+  .donar-container{
+    width:47%;
+  }
+  .skelton{
+    width: 47%;
+    height: 92px;
+    margin-bottom: 10px;
+  }
+
+  
   
 }
