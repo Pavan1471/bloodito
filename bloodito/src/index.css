@@ -106,6 +106,25 @@ background: linear-gradient(326deg, rgba(255,255,0,1) 23%, rgba(251,255,231,1) 8
   margin-top: 40px;
 }
 
+/* Donar Post responsive */
+.post-container{
+  width: 300px;
+  margin: auto;
+  position:absolute;
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  border-radius: 20px;
+  background-color: whitesmoke;
+  height: 500px;
+}
+.post-container {
+  position: absolute;
+  top: 400px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* Responsive design */
 @media only screen and (min-width: 800px) {
   .blooddonar-stats{

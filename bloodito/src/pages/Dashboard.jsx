@@ -3,7 +3,7 @@ import bloodlogo from "./asserts/blood-drop.png";
 import blooddonate from "./asserts/blood-donation.png";
 import bloodbag from "./asserts/blood-bag.png";
 import bloodrequest from "./asserts/blood-request.png";
-import {plus} from './asserts/plus.png'
+// import {plus} from './asserts/plus.png'
 import { FcApproval } from "react-icons/fc";
 // import Piechart from "../components/Piechart";
 import {
