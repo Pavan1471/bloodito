@@ -103,9 +103,9 @@ const Dashboard = () => {
       
       {/* <Pie data={data} width={50}/> */}
       {/* <div style={{ width: '500px', height: '500px',margin:'auto',marginTop:'40px' }}> */}
-      <div className="pie-chart">
+      {/* <div className="pie-chart">
         <Pie data={data} options={Option} />
-      </div>
+      </div> */}
     </>
   );
 };
