@@ -14,7 +14,8 @@ function Register(){
   const [password, setPassword] = useState(""); 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("hii");
+    setIsLoading(true);
+    // console.log("hii");
     // console.log(mobile);
     try {
       const response = await axios.post("https://bloodito.onrender.com/register", {
@@ -27,9 +28,10 @@ function Register(){
     } catch (error) {
       console.error("Error:", error.response.data);
     }
-    setTimeout(() => {
-      navigate("/login");
-  }, 1000);
+    finally{
+      setIsLoading(false);
+    }
+    navigate("/login");
   };
   return(
     <>
@@ -78,7 +80,9 @@ function Register(){
     )}
   </div>
     </button>
-    <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
+    <p class="signin">Already have an acount ? <a onClick={()=>{
+             navigate("/login");
+          }} href="#">Login</a> </p>
 </form>
       </center>
     </>

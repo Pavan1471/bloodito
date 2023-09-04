@@ -93,7 +93,9 @@ function Login() {
   </div>
         </button>
         <p class="signin">
-          Didn't have an acount ? <a href="#">SignUp</a>{" "}
+          Didn't have an acount ? <a onClick={()=>{
+             navigate("/register");
+          }} href="#">SignUp</a>{" "}
         </p>
       </form>
      </center>

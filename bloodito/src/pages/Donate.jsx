@@ -27,6 +27,7 @@ function Donate() {
         // setIsLoaded(false); 
         setIsLoaded(true)// even if there's an error, we should set loading to false
       });
+
   }, []);
   console.log(isLoaded);
   const userArray = Array.from(user);
@@ -63,7 +64,14 @@ function Donate() {
         </div>  
         
       ) : (
-        <Skeleton className="donar-container" style={{height:"1000px",borderRadius:"10px"}}/>
+        <>
+        <Skeleton className="donar-container" style={{height:"100px",width:"100%",borderRadius:"10px"}}/>
+        <Skeleton className="donar-container" style={{height:"100px",width:"100%",borderRadius:"10px"}}/>
+        <Skeleton className="donar-container" style={{height:"100px",width:"100%",borderRadius:"10px"}}/>
+        <Skeleton className="donar-container" style={{height:"100px",width:"100%",borderRadius:"10px"}}/>
+        <Skeleton className="donar-container" style={{height:"100px",width:"100%",borderRadius:"10px"}}/>
+        <Skeleton className="donar-container" style={{height:"100px",width:"100%",borderRadius:"10px"}}/>
+        </>
       )}
     
      

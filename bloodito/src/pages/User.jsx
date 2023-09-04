@@ -1,26 +1,77 @@
 import React from "react";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
-function User(){
+function User() {
   const [user, setUser] = useState([]);
   useEffect(() => {
-    axios.get('https://bloodito.onrender.com/myprofile',{
-      headers:{
-        'x-token':localStorage.getItem('token')
-      }
-    })
-      .then(res => {
-        console.log(res.data.email)
-        console.log(res.data)
+    axios
+      .get("https://bloodito.onrender.com/myprofile", {
+        headers: {
+          "x-token": localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        console.log(res.data.email);
+        console.log(res.data);
         setUser(res.data);
       })
-      .catch(err => {
-        console.log(err)
+      .catch((err) => {
+        console.log(err);
       });
   }, []);
-return(
-  <div>{user.email}</div>
-)
+  return (
+    // <div>{user.email}</div>
+    <>
+      <div class="page-content page-container" id="page-content">
+        <div class="padding">
+          <div class="row container d-flex justify-content-center">
+            <div class="col-xl-6 col-md-12">
+              <div class="card user-card-full">
+                <div class="row m-l-0 m-r-0">
+                  <div class="col-sm-4 bg-c-lite-green user-profile">
+                    <div class="card-block text-center text-white">
+                      <div class="m-b-25">
+                        <img
+                          src="https://img.icons8.com/bubbles/100/000000/user.png"
+                          class="img-radius"
+                          alt="User-Profile-Image"
+                        ></img>
+                      </div>
+                      <h6 class="f-w-600">{user.email}</h6>
+                      <h6 class="f-w-600">{user.firstname} {user.lastname}</h6>
+                      {/* <p>Web Designer</p> */}
+                      <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                    </div>
+                  </div>
+                  <div class="col-sm-8">
+                    <div class="card-block">
+                      <h6 class="m-b-20 p-b-5 b-b-default f-w-600">
+                        My profile
+                      </h6>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <p class="m-b-10 f-w-600">Email</p>
+                          <h6 class="text-muted f-w-400">{user.email}</h6>
+                        </div>
+                        <div class="col-sm-6">
+                          <p class="m-b-10 f-w-600">First name</p>
+                          <h6 class="text-muted f-w-400">{user.firstname}</h6>
+                        </div>
+                        <div class="col-sm-6">
+                          <p class="m-b-10 f-w-600">Last name</p>
+                          <h6 class="text-muted f-w-400">{user.lastname}</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 export default User;
