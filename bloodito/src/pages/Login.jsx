@@ -5,9 +5,12 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // import LoadingOverlay from 'react-loading-overlay';
 import { Skeleton, Spinner } from '@chakra-ui/react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
  
 
 function Login() {
+  // const notify = () => toast.success("Log in successful");
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -31,13 +34,19 @@ function Login() {
       const user = response.data.id;
 
       if (localStorage.getItem("token")) {
-        navigate("/dashboard");
-        // setTimeout(() => {
+        toast.success("Log in successful");
+   
+        
+
+        setTimeout(() => {
+          navigate("/dashboard");
           
-        // }, 1000);
+        }, 1000);
       }
     } catch (error) {
       console.log(error);
+      toast.error("Login failed. Please check your credentials.");
+
     }
    finally {
     setIsLoading(false); // End loading
@@ -50,6 +59,7 @@ function Login() {
   console.log(userID);
   return (
     <>
+      <ToastContainer />
     {/* <LoadingOverlay
   active={isLoading}
   spinner

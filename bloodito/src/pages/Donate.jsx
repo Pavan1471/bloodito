@@ -4,12 +4,15 @@ import blood from "./asserts/blood.png";
 import { Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 // import React from "react";
 // import "./App.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useState,useEffect } from "react";
 import axios from "axios";
 import DonarPost from "../components/DonarPost";
 import { FiMap, FiPhoneCall, FiUser } from "react-icons/fi";
 
 function Donate() {
+  const notify = () => toast("Wow so easy!");
   // const [loading, setLoading] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [user, setUser] = useState([]);
@@ -33,6 +36,9 @@ function Donate() {
   const userArray = Array.from(user);
   return (
     <>
+    <div>
+        <button onClick={notify}>Notify!</button>
+      </div>
     <DonarPost/>
     {isLoaded ? (
       <div className="donar-containers">
