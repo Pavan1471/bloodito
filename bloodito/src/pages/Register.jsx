@@ -3,9 +3,11 @@ import React from "react";
 import axios from "axios";
 import { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Skeleton, Spinner } from '@chakra-ui/react'
 
 function Register(){
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
@@ -27,7 +29,7 @@ function Register(){
     }
     setTimeout(() => {
       navigate("/login");
-  }, 2000);
+  }, 1000);
   };
   return(
     <>
@@ -69,7 +71,13 @@ function Register(){
         <input required="" placeholder="" type="password" class="input"></input>
         <span>Confirm password</span>
     </label>
-    <button onClick={handleSubmit} class="submit">Register</button>
+    <button onClick={handleSubmit} class="submit">
+    <div>
+    {isLoading ? <div><Spinner/></div> : (
+      <div>Register</div>
+    )}
+  </div>
+    </button>
     <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
 </form>
       </center>
