@@ -12,7 +12,7 @@ import DonarPost from "../components/DonarPost";
 import { FiMap, FiPhoneCall, FiUser } from "react-icons/fi";
 
 function Donate() {
-  const notify = () => toast("Wow so easy!");
+  //const notify = () => toast("Wow so easy!");
   // const [loading, setLoading] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [user, setUser] = useState([]);
