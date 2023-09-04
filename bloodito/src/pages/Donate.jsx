@@ -36,9 +36,6 @@ function Donate() {
   const userArray = Array.from(user);
   return (
     <>
-    <div>
-        <button onClick={notify}>Notify!</button>
-      </div>
     <DonarPost/>
     {isLoaded ? (
       <div className="donar-containers">
