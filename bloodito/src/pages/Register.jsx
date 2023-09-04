@@ -4,6 +4,8 @@ import axios from "axios";
 import { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Skeleton, Spinner } from '@chakra-ui/react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Register(){
   const navigate = useNavigate();
@@ -12,6 +14,7 @@ function Register(){
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState(""); 
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
@@ -25,8 +28,11 @@ function Register(){
         password: password,
       });
       console.log(response.data);
+      toast.success("Registration successful");
+     
     } catch (error) {
       console.error("Error:", error.response.data);
+      toast.error("Registration not successful");
     }
     finally{
       setIsLoading(false);
@@ -35,6 +41,7 @@ function Register(){
   };
   return(
     <>
+    <ToastContainer />
       <center>
       <form class="form">
     <p class="title">Register </p>
