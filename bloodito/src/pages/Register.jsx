@@ -15,7 +15,7 @@ function Register(){
     console.log("hii");
     // console.log(mobile);
     try {
-      const response = await axios.post("http://localhost:5000/register", {
+      const response = await axios.post("https://bloodito.onrender.com/register", {
         firstname: firstname,
         lastname: lastname,
         email: email,

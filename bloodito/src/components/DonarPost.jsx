@@ -35,7 +35,7 @@ function DonarPost() {
     console.log("hii");
     console.log(mobile);
     try {
-      const response = await axios.post("http://localhost:5000/donation", {
+      const response = await axios.post("https://bloodito.onrender.com/donation", {
         name: name,
         mobilenumber: mobile,
         address: address,

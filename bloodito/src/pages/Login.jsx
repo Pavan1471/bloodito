@@ -13,7 +13,7 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/user", {
+      const response = await axios.post("https://bloodito.onrender.com/user", {
         email: email,
         password: password,
       });

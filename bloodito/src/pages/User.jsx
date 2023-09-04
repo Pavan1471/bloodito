@@ -5,7 +5,7 @@ import axios from "axios";
 function User(){
   const [user, setUser] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:5000/myprofile',{
+    axios.get('https://bloodito.onrender.com/myprofile',{
       headers:{
         'x-token':localStorage.getItem('token')
       }

@@ -14,7 +14,7 @@ function Donate() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [user, setUser] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:5000/donate')
+    axios.get('https://bloodito.onrender.com/donate')
       .then(res => {
         console.log(res.data)
         setUser(res.data);
