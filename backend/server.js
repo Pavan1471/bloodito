@@ -8,6 +8,7 @@ const jwt =require('jsonwebtoken');
 const middleware = require('./middleware');
 // const User = require("./model");
 app.use(express.json())
+const port = process.env.PORT || 5000
 // app.use(cors());
 mongoose.connect('mongodb+srv://pavan147:pavan123@cluster0.xaedvyt.mongodb.net/',{
     useNewUrlParser:true,
@@ -120,6 +121,6 @@ app.get('/donate', async(req,res)=>{
     }
 
 })
-app.listen(5000,()=>
+app.listen(port,()=>
 console.log("server running..")
 )
