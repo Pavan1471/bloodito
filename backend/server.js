@@ -3,7 +3,10 @@ const mongoose= require('mongoose');
 const app = express();
 const cors = require('cors');
 app.use(cors());
-const Donate = require("./model");
+const {Donate,User} = require("./model");
+const jwt =require('jsonwebtoken');
+const middleware = require('./middleware');
+// const User = require("./model");
 app.use(express.json())
 // app.use(cors());
 mongoose.connect('mongodb+srv://pavan147:pavan123@cluster0.xaedvyt.mongodb.net/',{
@@ -30,6 +33,79 @@ app.post('/donation', async(req,res)=>{
     }
     catch(err){
         console.log(err)
+    }
+
+})
+app.post('/user', async(req, res) => {
+    try {
+        const { email, password } = req.body;
+        const existingUser = await User.findOne({ email });
+
+        if (!existingUser) {
+            return res.status(400).send("User does not exist");
+        }
+
+        if (existingUser.password !== password) {
+            return res.status(400).send("Invalid credentials");
+        }
+
+        let payload = {
+            user: {
+                id: existingUser._id
+            }
+        }
+
+        jwt.sign(payload, 'jwtPassword', { expiresIn: 3600000000 }, (err, token) => {
+            if (err) throw err;
+            res.json({
+                message: "Login Success",
+                token: token
+            });
+        });
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+});
+app.post('/register', async(req,res)=>{
+    const {firstname,lastname,email,password} =req.body;
+    try{
+        const newData = new User({firstname:firstname,lastname:lastname,email:email,password:password});
+        await newData.save();
+        return res.json(await User.find());
+        console.log(req.body);
+        // const data = JSON.parse(response.data);
+        // console.log(data)
+
+
+    }
+    catch(err){
+        console.log(err)
+    }
+
+})
+app.get('/login', async(req,res)=>{
+    console.log('Inside /donation route')
+    try{
+        const da = await User.find();
+        return res.json(da);
+
+    }
+    catch(err){
+        console.log(err);
+    }
+
+})
+app.get('/myprofile',middleware, async(req,res)=>{
+    console.log('Inside /donation route')
+    try{
+        const data = await User.findById(req.user.id);
+        return res.json(data);
+
+    }
+    catch(err){
+        console.log(err);
     }
 
 })

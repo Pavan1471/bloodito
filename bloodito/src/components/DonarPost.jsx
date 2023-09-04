@@ -31,6 +31,7 @@ function DonarPost() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const handleSubmit = async (event) => {
     event.preventDefault();
+    onClose();
     console.log("hii");
     console.log(mobile);
     try {

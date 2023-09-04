@@ -1,7 +1,26 @@
 import React from "react";
-function user(){
-  return(
-    <div>User</div>
-  )
+import { useEffect,useState } from "react";
+import axios from "axios";
+
+function User(){
+  const [user, setUser] = useState([]);
+  useEffect(() => {
+    axios.get('http://localhost:5000/myprofile',{
+      headers:{
+        'x-token':localStorage.getItem('token')
+      }
+    })
+      .then(res => {
+        console.log(res.data.email)
+        console.log(res.data)
+        setUser(res.data);
+      })
+      .catch(err => {
+        console.log(err)
+      });
+  }, []);
+return(
+  <div>{user.email}</div>
+)
 }
-export default user;
+export default User;

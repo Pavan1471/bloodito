@@ -12,7 +12,7 @@ import { FiMap, FiPhoneCall, FiUser } from "react-icons/fi";
 function Donate() {
   // const [loading, setLoading] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState([]);
   useEffect(() => {
     axios.get('http://localhost:5000/donate')
       .then(res => {
@@ -28,37 +28,45 @@ function Donate() {
         setIsLoaded(true)// even if there's an error, we should set loading to false
       });
   }, []);
+  console.log(isLoaded);
   const userArray = Array.from(user);
   return (
     <>
     <DonarPost/>
-    <div className="donar-containers">
-    {userArray.map(user => (
-  
-      <Skeleton isLoaded={isLoaded} className="donar-container">
-         {/* <div className="donar-container"> */}
-         <div className="blood-group">
-           <img className="blood-img" src={blood}></img>
-           <div>{user.bloodtype}</div>
-         </div>
-         <div>
-           <div className="blood-info">
-             <FiPhoneCall />
-             <div className="donar-name">{user.mobilenumber}</div>
+    {isLoaded ? (
+      <div className="donar-containers">
+      {userArray.map(user => (
+    
+        <div className="donar-container">
+           {/* <div className="donar-container"> */}
+           <div className="blood-group">
+             <img className="blood-img" src={blood}></img>
+             <div>{user.bloodtype}</div>
            </div>
-           <div className="blood-info">
-             <FiUser />
-             <div className="donar-name">{user.name}</div>
+           <div>
+             <div className="blood-info">
+               <FiPhoneCall />
+               <div className="donar-name">{user.mobilenumber}</div>
+             </div>
+             <div className="blood-info">
+               <FiUser />
+               <div className="donar-name">{user.name}</div>
+             </div>
+             <div className="blood-info">
+               <FiMap />
+               <div className="donar-name">{user.address}</div>
+             </div>
            </div>
-           <div className="blood-info">
-             <FiMap />
-             <div className="donar-name">{user.address}</div>
-           </div>
-         </div>
-       {/* </div> */}
-      </Skeleton>
-      ))}
-      </div>   
+         {/* </div> */}
+        </div>
+        ))}
+        </div>  
+        
+      ) : (
+        <Skeleton className="donar-container" style={{height:"1000px",borderRadius:"10px"}}/>
+      )}
+    
+     
     </>
   );
 }

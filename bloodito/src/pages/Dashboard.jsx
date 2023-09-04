@@ -4,6 +4,8 @@ import blooddonate from "./asserts/blood-donation.png";
 import bloodbag from "./asserts/blood-bag.png";
 import bloodrequest from "./asserts/blood-request.png";
 // import {plus} from './asserts/plus.png'
+import { useState,useEffect } from "react";
+import axios from "axios";
 import { FcApproval } from "react-icons/fc";
 // import Piechart from "../components/Piechart";
 import {
@@ -21,6 +23,7 @@ import { Bar, Pie } from "react-chartjs-2";
 // import React from "react";
 Chart.register(BarElement, LinearScale, CategoryScale, Legend, ArcElement);
 const Dashboard = () => {
+  // console.log(user);
   const labels = [
     "Jan",
     "Feb",
@@ -64,6 +67,7 @@ const Dashboard = () => {
       },
     ],
   };
+
   return (
     <>
       <div className="donars-container-stats">
