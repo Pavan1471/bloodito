@@ -36,9 +36,6 @@ function Donate() {
   const userArray = Array.from(user);
   return (
     <>
-    <div>
-        <button onClick={notify}>Notify!</button>
-      </div>
     <DonarPost/>
     {isLoaded ? (
       <div className="donar-containers">
@@ -71,6 +68,7 @@ function Donate() {
         
       ) : (
         <>
+        <Skeleton className="donar-container" style={{height:"100px",width:"100%",borderRadius:"10px"}}/>
         <Skeleton className="donar-container" style={{height:"100px",width:"100%",borderRadius:"10px"}}/>
         <Skeleton className="donar-container" style={{height:"100px",width:"100%",borderRadius:"10px"}}/>
         <Skeleton className="donar-container" style={{height:"100px",width:"100%",borderRadius:"10px"}}/>
