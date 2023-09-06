@@ -53,7 +53,7 @@ import {
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Donate Blood</ModalHeader>
+            <ModalHeader>Request Blood</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
               <FormControl isRequired>
@@ -99,7 +99,7 @@ import {
   
             <ModalFooter>
               <Button colorScheme="blue" mr={3} onClick={handleSubmit}>
-                Donate
+                Request
               </Button>
               {/* <Button variant='ghost'>Secondary Action</Button> */}
             </ModalFooter>
