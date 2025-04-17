@@ -8,7 +8,7 @@ const jwt =require('jsonwebtoken');
 const middleware = require('./middleware');
 // const User = require("./model");
 app.use(express.json())
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5001
 // app.use(cors());
 mongoose.connect('mongodb+srv://pavan147:pavan123@cluster0.xaedvyt.mongodb.net/',{
     useNewUrlParser:true,
